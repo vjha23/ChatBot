@@ -15,7 +15,7 @@ function Footer(props) {
         <input
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
-          placeholder="Please Type Something.."
+          placeholder="Type a message here"
           onKeyDown={(e) => handleReset(e)}
         />
     </div>

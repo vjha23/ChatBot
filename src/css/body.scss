@@ -36,8 +36,9 @@
        height: auto;
        gap: 2px;
        padding: 0.7rem 1.5rem;
-       background: rgb(214, 214, 214);
+       background: linear-gradient(90deg, #0c74b0 0%, #663399 35%, #a92f76 100%);
        border-radius: 1rem 1rem 0rem 1rem;
+       color: white;
 
     }
     .botMessage{
