@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import { useDispatch, useSelector,connect } from "react-redux";
+import {eventQueryAction,textQueryAction} from './redux/action/index'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(props) {
+  const dispatch = useDispatch();
+  // const messagesFromRedux = useSelector(state => state.message.messages)
+
+  useEffect(()=>{
+    props.eventQueryAction('hi')
+    // props.textQueryAction('hi')
+  })
+
+  return <div className="App">hiii</div>;
 }
 
-export default App;
+const mapStateToProps = state => ({
+  // Loading: state.task.loading
+});
+
+const mapDispacthToProps = dispatch => {
+  return {
+    eventQueryAction: (payload) => dispatch(eventQueryAction(payload)),
+    textQueryAction:(payload)=>dispatch(textQueryAction(payload))    
+  };
+
+};
+
+export default connect(mapStateToProps,mapDispacthToProps)(App);
