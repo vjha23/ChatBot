@@ -1,30 +1,51 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
-import { useDispatch, useSelector,connect } from "react-redux";
-import {eventQueryAction,textQueryAction} from './redux/action/index'
+import "./App.scss";
+import {  connect } from "react-redux";
+import { eventQueryAction, textQueryAction } from "./redux/action/index";
+import Footer from "./component/footer";
+import Header from "./component/header";
+import Body from "./component/body";
 
 function App(props) {
-  const dispatch = useDispatch();
   // const messagesFromRedux = useSelector(state => state.message.messages)
 
-  useEffect(()=>{
-    props.eventQueryAction('hi')
-    // props.textQueryAction('hi')
-  })
+  useEffect(() => {
+    props.eventQueryAction("welcometomywebsite");
+  },[]);
 
-  return <div className="App">hiii</div>;
-}
-
-const mapStateToProps = state => ({
-  // Loading: state.task.loading
-});
-
-const mapDispacthToProps = dispatch => {
-  return {
-    eventQueryAction: (payload) => dispatch(eventQueryAction(payload)),
-    textQueryAction:(payload)=>dispatch(textQueryAction(payload))    
+  const handleSendMessage = (text) => {
+    props.textQueryAction(text);
   };
 
+  return (
+    <div className="App">
+      <div className='headerComponent'>
+        <Header />
+      </div>
+      {props.messages ? (
+ <div className='bodyComponent'>
+ <Body />
+</div>
+      ):(
+        <div>Please Wait...</div>
+      )}
+     
+      <div className='footerComponent'>
+        <Footer handleSendMessage={handleSendMessage} />
+      </div>
+    </div>
+  );
+}
+
+const mapStateToProps = (state) => ({
+  messages:state.messages
+});
+
+const mapDispacthToProps = (dispatch) => {
+  return {
+    eventQueryAction: (payload) => dispatch(eventQueryAction(payload)),
+    textQueryAction: (payload) => dispatch(textQueryAction(payload)),
+  };
 };
 
-export default connect(mapStateToProps,mapDispacthToProps)(App);
+export default connect(mapStateToProps, mapDispacthToProps)(App);
