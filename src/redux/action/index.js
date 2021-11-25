@@ -1,12 +1,20 @@
 import Axios from "axios";
 
 export const SAVE_MESSAGE = "save_message";
+export const REFRESH_MESSAGE='refresh_message'
+
 
 export function saveMessage(dataToSubmit) {
   return {
     type: SAVE_MESSAGE,
     payload: dataToSubmit,
   };
+}
+
+export function refreshMessage(){
+  return{
+    type:REFRESH_MESSAGE
+  }
 }
 
 export const textQueryAction =  (text) => {

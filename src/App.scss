@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -14,17 +14,24 @@
   width: 28rem;
   // min-height: 90%;
   // height: 90%;
-height: 90vh;
-position: fixed;
-bottom: 20px;
-right: 20px;
+  height: 90vh;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  transition: height 300ms;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+}
 
-display: flex;
-align-items: center;
-flex-direction: column;
-box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
-
-  
+.AppTransition {
+  height: 5vh;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  transition: height 300ms;
+  width: 28rem;
 }
 
 .headerComponent {
@@ -40,6 +47,7 @@ box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
   width: 100%;
   height: 79%;
   max-height: 83%;
+  transition: height 300ms;
   // border: 1px solid red;
 }
 

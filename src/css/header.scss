@@ -1,3 +1,17 @@
 .headerContainer {
-    
+  height: 100%;
+    .iconContainer{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      border: 1px solid white;
+      height: 100%;
+    }
+    .iconelement{
+      font-size: 1.4rem;
+      margin-right: 1.4rem;
+      cursor: pointer;
+      color: white;
+    }
+
   }
