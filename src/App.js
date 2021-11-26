@@ -7,13 +7,14 @@ import Header from "./component/header";
 import Body from "./component/body";
 
 function App(props) {
-  // const messagesFromRedux = useSelector(state => state.message.messages)
+  const [feedback, setFeedback] = useState(false);
   const [togglebodyTransition, setToggleBodyTransition] = useState(true);
   useEffect(() => {
     props.eventQueryAction("welcometomywebsite");
   }, []);
 
   const handleSendMessage = (text) => {
+    setFeedback(false)
     props.textQueryAction(text);
   };
 
@@ -36,7 +37,8 @@ function App(props) {
       </div>
       {props.messages ? (
         <div className="bodyComponent">
-          <Body />
+          <Body feedback={feedback} setFeedback={setFeedback}/>
+
         </div>
       ) : (
         <div className='bodyComponent'>Please Wait...</div>

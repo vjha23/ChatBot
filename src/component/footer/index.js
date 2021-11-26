@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import '../../css/footer.scss'
+import { MdKeyboardVoice} from "react-icons/md";
 
 function Footer(props) {
   const [inputText, setInputText] = useState("");
@@ -18,6 +19,7 @@ function Footer(props) {
           placeholder="Type a message here"
           onKeyDown={(e) => handleReset(e)}
         />
+        <MdKeyboardVoice style={{fontSize:'2.2rem'}}/>
     </div>
   );
 }

@@ -26,6 +26,7 @@
 .botMessageContainer{
     display: flex;
     flex-direction: column;
+    
 
     .userMessage{
        display: flex;
@@ -52,6 +53,26 @@
         padding: 0.7rem 1.5rem;
         background: rgb(214, 214, 214);
         border-radius: 1rem 1rem 1rem 0rem;
+
     }
 }
+.feedbackContainer{
+    display: flex;
+    align-items: center;
+    // border: 1px solid red;
+    position: absolute;
+    bottom: -122%;
+    left: 55%;
+    padding: 0.7rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+    background-color: whitesmoke;
+    border-radius: 20px;
+}
+.feedbackIcons{
+    font-size: 1.5rem;
+    cursor: pointer;
+}
 
+.activeFeedback{
+    color: blue;
+}

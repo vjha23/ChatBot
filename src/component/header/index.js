@@ -2,6 +2,7 @@ import React from 'react'
 import '../../css/header.scss'
 import { FiChevronDown, FiRefreshCcw } from "react-icons/fi";
 
+
 function Header(props) {
     return (
         <div className='headerContainer'>
